@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Today I will learn about Closure Concepts in Javascript</h1>
+
+    <script>
+        const outerFun=(a)=>{
+            let b=10;
+            const innerFun=()=>{
+                let sum=a+b;
+                console.log(`The sum of Two Number is ${sum}`)
+            }
+            innerFun();
+        }
+        outerFun(10);
+    </script>
+</body>
+</html>
