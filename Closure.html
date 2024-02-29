@@ -8,42 +8,42 @@
   <body>
     <h1>Today I will learn about Closure Concepts in Javascript</h1>
     <button id="green">Green</button>
-    <button id="Blue">Blue</button>
+    <button id="blue">Blue</button>
     <script>
 
-                         function outer() {
-                           let username = "Hassam";
-                           console.log("Outer", username);
-                           <!-- console.log("Outer", secret); -->
-                           function inner() {
-                             let secret = "my123";
-                             console.log("Inner", secret);
-                             console.log("Inner", username);
+      function outer() {
+        let username = "Hassam";
+        console.log("Outer", username);
+        // console.log("Outer", secret);
+        function inner() {
+          let secret = "my123";
+          console.log("Inner", secret);
+          console.log("Inner", username);
+        }
 
-                           }
+        function inner2() {
+          console.log("Inner2", username);
+        }
 
-                           function inner2() {
-                             console.log("Inner2", username);
-                           }
-
-                           inner();
-                           inner2();
-                         }
-
-                         outer();
-
-                         <!-- Now i will try to learn examples of Closure
-                       in which i will apply this concepts through some code
-            NOW LETS BEGIN
-                       -->
-
-      function clickeHandler(color){
-          return function(){
-              document.body.style.backgroundColor=`${color}`
-          }
+        inner();
+        inner2();
       }
-      document.getElementById('orange').onclick=clickeHandler("orange")
-      document.getElementById('green').onclick=clickeHandler("green")
+
+      outer();
+
+      // Now I will try to learn examples of Closure
+      // in which I will apply this concept through some code
+      // NOW LET'S BEGIN
+
+      function clickHandler(color) {
+        <!--By return we will pass the function with its lexical scope -->
+        return function () 
+        { 
+          document.body.style.backgroundColor = `${color}`;
+        };
+      }
+      document.getElementById('green').onclick = clickHandler("green");
+      document.getElementById('blue').onclick = clickHandler("blue");
       
     </script>
   </body>
