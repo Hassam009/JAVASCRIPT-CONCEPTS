@@ -1,23 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
     <h1>Today I will learn about Closure Concepts in Javascript</h1>
-
+    <button id="green">Green</button>
+    <button id="Blue">Blue</button>
     <script>
-        const outerFun=(a)=>{
-            let b=10;
-            const innerFun=()=>{
-                let sum=a+b;
-                console.log(`The sum of Two Number is ${sum}`)
-            }
-            innerFun();
-        }
-        outerFun(10);
+
+                         function outer() {
+                           let username = "Hassam";
+                           console.log("Outer", username);
+                           <!-- console.log("Outer", secret); -->
+                           function inner() {
+                             let secret = "my123";
+                             console.log("Inner", secret);
+                             console.log("Inner", username);
+
+                           }
+
+                           function inner2() {
+                             console.log("Inner2", username);
+                           }
+
+                           inner();
+                           inner2();
+                         }
+
+                         outer();
+
+                         <!-- Now i will try to learn examples of Closure
+                       in which i will apply this concepts through some code
+            NOW LETS BEGIN
+                       -->
+
+      function clickeHandler(color){
+          return function(){
+              document.body.style.backgroundColor=`${color}`
+          }
+      }
+      document.getElementById('orange').onclick=clickeHandler("orange")
+      document.getElementById('green').onclick=clickeHandler("green")
+      
     </script>
-</body>
+  </body>
 </html>
