@@ -6,22 +6,39 @@
     <title>Document</title>
 </head>
 <body>
-    <h2>Today i will learn about Events</h2>
-     <!-- In js mostly events occur in sequentially -->
-      <li><img src="Images/c1.jpg" alt="Cat1" id="Cat1" height="200px" width="200px"></li>
-      <li><img src="Images/c2.jpg" alt="Cat2" id="Cat2" height="200px" width="200px"></li>
-      <li><img src="Images/c3.jpg" alt="Cat3" id="Cat3" height="200px" width="200px"onclick="alert('This is cat 3')"></li>
+    <div id="content">
+        <h2>Today I will learn about Events</h2>
+        <ul> <!-- Add a list container -->
+            <li><img src="Images/c1.jpg" alt="Cat1" id="Cat1" height="200px" width="200px"></li>
+            <li><img src="Images/c2.jpg" alt="Cat2" id="Cat2" height="200px" width="200px"></li>
+            <li><img src="Images/c3.jpg" alt="Cat3" id="Cat3" height="200px" width="200px" onclick="alert('This is cat 3')"></li>
+        </ul>
+    </div>
 
-      <script>
-<!-- Now i will learn about some other methods -->
- 
-document.getElementById('Cat2').onclick=function(){
-   alert('Why you clicked on Cat 2')
-}
-document.getElementById('Cat1').addEventListener('mouseover', ()=>{
-    alert('Why you staring on Cat 1')
-})
-      </script>
+    <script>
+        // Now I will learn about some other methods
 
-    </body>
+        document.getElementById('Cat2').onclick = function () {
+            alert('Why did you click on Cat 2');
+        }
+
+        // Some important events 
+        // type, timestamp, defaultPrevented
+        // target, toElement, scrElement, currentTarget
+        // Clientx, clientY, screenX, ScreenY
+
+        // Now we will learn about Event Propagation
+        document.getElementById('content').addEventListener('click', function (e) {
+            console.log('You clicked in Content Folder');
+        }, true);
+
+        document.getElementById('Cat3').addEventListener('click', function (e) {
+            console.log('You clicked in Cat3');
+        }, true);
+
+        document.querySelector('#content').addEventListener('click', (e) => {
+            console.log(e.target.parentNode);
+        });
+    </script>
+</body>
 </html>
