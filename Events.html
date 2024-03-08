@@ -8,33 +8,38 @@
 <body>
     <div id="content">
         <h2>Today I will learn about Events</h2>
-        <ul> <!-- Add a list container -->
-            <li><img src="Images/c1.jpg" alt="Cat1" id="Cat1" height="200px" width="200px"></li>
-            <li><img src="Images/c2.jpg" alt="Cat2" id="Cat2" height="200px" width="200px"></li>
-            <li><img src="Images/c3.jpg" alt="Cat3" id="Cat3" height="200px" width="200px" onclick="alert('This is cat 3')"></li>
+        <ul>
+          <li><img src="Images/c1.jpg" alt="Cat1" id="Cat1" height="200px" width="200px"></li>
+          <li><img src="Images/c2.jpg" alt="Cat2" id="Cat2" height="200px" width="200px"></li>
+          <li><img src="Images/c3.jpg" alt="Cat3" id="Cat3" height="200px" width="200px" onclick="alert('This is cat 3')"></li>
         </ul>
     </div>
 
     <script>
-        // Now I will learn about some other methods
-
         document.getElementById('Cat2').onclick = function () {
             alert('Why did you click on Cat 2');
         }
 
-        // Some important events 
+        // Now we will learn about some other methods
+
+        // document.getElementById('Cat1').addEventListener('mouseover', () => {
+        //     alert('Why are you staring at Cat 1');
+        // })
+
+        // Some important events
         // type, timestamp, defaultPrevented
-        // target, toElement, scrElement, currentTarget
-        // Clientx, clientY, screenX, ScreenY
+        // target, toElement, srcElement, currentTarget
+        // clientX, clientY, screenX, screenY
 
         // Now we will learn about Event Propagation
+
         document.getElementById('content').addEventListener('click', function (e) {
             console.log('You clicked in Content Folder');
-        }, true);
+        }, false);  // Change 'true' to 'false' for event bubbling
 
         document.getElementById('Cat3').addEventListener('click', function (e) {
-            console.log('You clicked in Cat3');
-        }, true);
+            console.log('You clicked on Cat3');
+        }, false);
 
         document.querySelector('#content').addEventListener('click', (e) => {
             console.log(e.target.parentNode);
