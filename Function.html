@@ -36,18 +36,18 @@
         }
         
         console.log(calculate(2, 2, "*"));
+        const isReverse = (str) => {
+            for (let char = 0; char < str.length; char++) {
+                console.log(str[char]);
+            }
+            console.log("Now Reverse Order");
+            for (let char = str.length - 1; char >= 0; char--) {
+                console.log(str[char]);
+            }
+        };
         
-const isReverse=(str)=>{
-    for(let char=0; char<=str.length; char++){
-        console.log(str[char])
-    }
-    console.log("Now Reverse Order")
-    for(let char=str.length; char>=0; char++){
-        console.log(str[char])
-    }
-} 
-isReverse("Hassam is Learning Javascript")
-
+        isReverse("Hassam is Learning Javascript");
+        
 
     </script>
 </body>
