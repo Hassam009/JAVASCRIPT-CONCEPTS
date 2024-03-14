@@ -44,8 +44,36 @@ return `My favourite person is ${curElem}`
 let result=person.splice(1,1); 
 console.log(result);
 
-//INdex of is used to return ist index of Arrays
+//INdex of is used to return index of required elemnt of Array
 // syntax is indexof(SearchEleme, fromIndex)
+
+
+//const number=[1,2,3, 6,7 ,2,1];
+//const shown=numbers.include(4);
+//console.log(shown)
+ 
+//Now i will learn about FIlter topics
+let value=6;
+const number=[1,2,3, 6,7 ,2,1];
+let updatedNumber=number.filter((curElem)=>{
+    return curElem !== value;
+})
+console.log(updatedNumber);
+
+
+//EXAMPLE Question
+
+//Given an array of products where each product has name
+//and a price, write a function that uses the filter method to return an array
+// containing only products with a price less than or equal to 
+//500;
+
+const product=[
+{name: "Laptop", price:1200},
+{name:"Phon", price:800},
+{name:"Tablet", price:300},
+{name:"SmartWatch", price:150},
+];
     </script>
 </body>
 </html>
