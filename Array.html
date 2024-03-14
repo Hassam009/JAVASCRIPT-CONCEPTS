@@ -74,6 +74,13 @@ const product=[
 {name:"Tablet", price:300},
 {name:"SmartWatch", price:150},
 ];
+
+const filterProduct=product.filter(()=>{
+console.log(curElem.price);
+return curElem.price<=500;
+})
+console.log(filterProduct);
+
     </script>
 </body>
 </html>
