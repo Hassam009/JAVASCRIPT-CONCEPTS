@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOM Manipulation Example</title>
+</head>
+<body>
+  <p id="demo">This is a paragraph.</p>
+  <script>
+    // Create a button element
+    var button = document.createElement("button");
+    button.textContent = "Click me";
+
+    // Add an event listener to the button
+    button.addEventListener("click", function() {
+      var paragraph = document.getElementById("demo");
+      paragraph.textContent = "Button clicked!";
+    });
+
+    // Append the button to the document body
+    document.body.appendChild(button);
+  </script>
+</body>
+</html>
