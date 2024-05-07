@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Today I will learn about Async Await and Promises</h1>
+    <ul id="dataList"></ul>
+
+    <script>
+      const Data = [
+        { Name: "Hassam", Profession: "Student" },
+        { Name: "Ali", Profession: "Professor" },
+        { Name: "Ahmed", Profession: "Developer" },
+      ];
+
+      const getData = () => {
+        let output = "";
+        setTimeout(() => {
+          Data.forEach((data, index) => {
+            output += `<li>${data.Name}</li>`; // Use data.Name instead of Data.Name
+          });
+          document.getElementById("dataList").innerHTML = output;
+        }, 2000);
+      };
+
+      getData();
+    </script>
+  </body>
+</html>
